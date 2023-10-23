@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="./css/typing.css">
     <link rel="stylesheet" href="./css/common.css">
     <title>아이폰 12 Pro 화면</title>
-    <style>
-        
-    </style>
+    <script src="./js/typing.js"></script>
 </head>
 <body>
     <div class="header">
@@ -18,13 +16,13 @@
         <h2 style="font-size: 24px;">타이핑</h2>
     
     <div class = "button">
-      <input type="button" value="초기화">
+      <input type="button" value="초기화" onclick="clearInputText();">
     </div>
     </div>
     <div class="input">
-      <input type="text" placeholder="입력해주세요.">
+      <p><textarea id="textInput" placeholder="입력해주세요." ></textarea></p>
     </div>
-
+    
     
     <div class="widget">
         <button class="image-button"><img src="images/home.png" alt="이미지 1"></button>

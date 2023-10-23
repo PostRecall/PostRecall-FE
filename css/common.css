@@ -27,6 +27,7 @@ h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: center;
     white-space: nowrap; /* 한 줄로 텍스트를 유지 */
 }
 .widget {

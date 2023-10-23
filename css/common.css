@@ -3,14 +3,6 @@ body {
     padding: 0;
     background-color: #ffffff;
 }
-.header {
-    background-color: transparent;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
 .hamburger-icon {
     color: #734CEB;
     font-size: 24px;

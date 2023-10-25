@@ -20,24 +20,10 @@
             padding-left: 20px;
         }
 
-        .hamburger-icon {
-            color: #734CEB; 
-            font-size: 24px;
-            position: relative;
-            top: 40px;
-            left: 20px; 
-        }
+        
 
       
-        .hamburger-icon:before,
-        .hamburger-icon:after {
-            content: '';
-            display: block;
-            background-color: #734CEB;
-            height: 3px;
-            width: 30px;
-            margin: 6px 0;
-        }
+        
 
         .content {
             text-align: center;
@@ -119,6 +105,42 @@
             height: 60px; 
             margin: 20px; 
         }
+        .menu {
+            margin-top: 50px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #fff;
+            transition: left 0.3s;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu a {
+            padding: 10px;
+            text-decoration: none;
+            color: #000; /* Change the color as needed */
+        }
+
+        /* Styles for the static hamburger icon */
+        .static-hamburger-icon {
+            color: #734CEB;
+            font-size: 24px;
+            position: fixed;
+            top: 40px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's above the menu */
+        }
+
+        /* Hide the hamburger icon when the menu is open */
+        .menu-open .static-hamburger-icon {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -129,9 +151,24 @@
         <h2 style="font-size: 20px;">포스트잇 추가</h2>
         
         <div class="image-button-container">
-            <button class="image-button"><img src="images/+.png" alt="이미지 1"></button>
-            <button class="image-button"><img src="images/+.png" alt="이미지 2"></button>
-            <button class="image-button"><img src="images/+.png" alt="이미지 3"></button>
+            <button class="image-button">
+                <div class="add-btn">
+                    <img src="images/+.png" alt="이미지 1">
+                    <p><strong>퀴즈</strong></p>
+                </div>
+            </button>
+            <button class="image-button">
+                <div class="add-btn">
+                    <img src="images/+.png" alt="이미지 1">
+                    <p><strong>퀴즈</strong></p>
+                </div>
+            </button>
+            <button class="image-button">
+                <div class="add-btn">
+                    <img src="images/+.png" alt="이미지 1">
+                    <p><strong>오답</strong></p>
+                </div>
+            </button>
         </div>
         
        
@@ -139,12 +176,38 @@
             <button class="button">타이핑</button>
         </div>
     </div>
-   
+    <div class="static-hamburger-icon" id="hamburger-icon">&#9776;</div>
     <div class="widget">
-        <button class="image-button"><img src="images/home.png" alt="이미지 1"></button>
-        <button class="image-button"><img src="images/개념.png" alt="이미지 2"></button>
+        <button class="image-button">
+            <img src="images/home.png" alt="이미지 1"></button>
+        <button class="image-button"><img src="images/개념.png" alt="이미지 2">
+        </button>
         <button class="image-button"><img src="images/퀴즈.png" alt="이미지 3"></button>
         <button class="image-button"><img src="images/오답.png" alt="이미지 4"></button>
     </div>
+    <div class="menu">
+        <ul>
+            <li style="margin-top: 20px;"><a href="#">메뉴 항목 1</a></li>
+            <li><a href="#">메뉴 항목 2</a></li>
+            <li><a href="#">메뉴 항목 3</a></li>
+        </ul>
+    </div>
+      <script>
+        const menu = document.querySelector('.menu');
+        const hamburgerIcon = document.querySelector('#hamburger-icon');
+
+        hamburgerIcon.addEventListener('click', () => {
+            if (menu.style.left === '0px') {
+                // Close the menu
+                menu.style.left = '-250px';
+                hamburgerIcon.classList.remove('menu-open');
+            } else {
+                // Open the menu
+                menu.style.left = '0px';
+                hamburgerIcon.classList.add('menu-open');
+            }
+        });
+      </script>
+      
 </body>
 </html>

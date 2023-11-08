@@ -122,10 +122,10 @@
         .menu a {
             padding: 10px;
             text-decoration: none;
-            color: #000; /* Change the color as needed */
+            color: #000; 
         }
 
-        /* Styles for the static hamburger icon */
+       
         .static-hamburger-icon {
             color: #734CEB;
             font-size: 24px;
@@ -133,10 +133,10 @@
             top: 40px;
             left: 20px;
             cursor: pointer;
-            z-index: 1000; /* Ensure it's above the menu */
+            z-index: 1000; 
         }
 
-        /* Hide the hamburger icon when the menu is open */
+    
         .menu-open .static-hamburger-icon {
             display: none;
         }
@@ -152,18 +152,18 @@
         
         <div class="image-button-container">
             <button class="image-button">
+                <div class="add-btn" onclick="navigateToPage(1)">
+                    <img src="images/+.png" alt="이미지 1">
+                    <p><strong>개념</strong></p>
+                </div>
+            </button>
+            <button class="image-button" onclick="navigateToPage(2)">
                 <div class="add-btn">
                     <img src="images/+.png" alt="이미지 1">
                     <p><strong>퀴즈</strong></p>
                 </div>
             </button>
-            <button class="image-button">
-                <div class="add-btn">
-                    <img src="images/+.png" alt="이미지 1">
-                    <p><strong>퀴즈</strong></p>
-                </div>
-            </button>
-            <button class="image-button">
+            <button class="image-button" onclick="navigateToPage(3)">
                 <div class="add-btn">
                     <img src="images/+.png" alt="이미지 1">
                     <p><strong>오답</strong></p>
@@ -178,18 +178,30 @@
     </div>
     <div class="static-hamburger-icon" id="hamburger-icon">&#9776;</div>
     <div class="widget">
-        <button class="image-button">
-            <img src="images/home.png" alt="이미지 1"></button>
-        <button class="image-button"><img src="images/개념.png" alt="이미지 2">
+        <button class="image-button" >
+            <div class="add-btn">
+                <img src="images/개념.png" alt="이미지 2">
+            </div>
         </button>
-        <button class="image-button"><img src="images/퀴즈.png" alt="이미지 3"></button>
-        <button class="image-button"><img src="images/오답.png" alt="이미지 4"></button>
+        
+        <button class="image-button" >
+            <div class="add-btn">
+                <img src="images/퀴즈.png" alt="이미지 3">
+            </div>
+        </button>
+        
+        <button class="image-button" >
+            <div class="add-btn">
+                <img src="images/오답.png" alt="이미지 4">
+            </div>
+        </button>
+        
     </div>
     <div class="menu">
         <ul>
-            <li style="margin-top: 20px;"><a href="#">메뉴 항목 1</a></li>
-            <li><a href="#">메뉴 항목 2</a></li>
-            <li><a href="#">메뉴 항목 3</a></li>
+            <li style="margin-top: 20px;"><a href="#">이용안내</a></li>
+            <li><a href="#">버전정보</a></li>
+            <li><a href="#">문의사항</a></li>
         </ul>
     </div>
       <script>
@@ -198,15 +210,32 @@
 
         hamburgerIcon.addEventListener('click', () => {
             if (menu.style.left === '0px') {
-                // Close the menu
+               
                 menu.style.left = '-250px';
                 hamburgerIcon.classList.remove('menu-open');
             } else {
-                // Open the menu
+              
                 menu.style.left = '0px';
                 hamburgerIcon.classList.add('menu-open');
             }
         });
+
+
+        function navigateToPage(pageNumber) {
+
+        let destinationURL = "";
+
+        if (pageNumber === 1) {
+            destinationURL = 'addpost-it(개념).html';
+        } else if (pageNumber === 2) {
+            destinationURL = 'addpost-it(퀴즈).html';
+        } else if (pageNumber === 3) {
+            destinationURL = 'addpost-it(오답).html';
+        }
+
+        // 지정된 URL로 페이지 이동
+        window.location.href = destinationURL;
+    }
       </script>
       
 </body>

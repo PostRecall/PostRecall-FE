@@ -10,17 +10,21 @@
   </head>
 
   <body>
-    <div class="rectangle">
-      <div class="title">개념</div>
-      <div class="subtitle">중요도</div>
-      <img src="images/Group 15.svg" class="custom-button" />
-      <img src="images/Group 16.svg" class="custom-button" />
-      <img src="images/Group 17.svg" class="custom-button" />
-      <div class="custom-rectangle">
-        <textarea placeholder="개념을 입력해주세요(300글자이내)  "></textarea>
+    <form action="http://localhost:3000/concept" method="POST">
+      <div class="rectangle">
+        <div class="title">개념</div>
+        <div class="subtitle">중요도</div>
+        <img src="images/Group 15.svg" class="custom-button" />
+        <img src="images/Group 16.svg" class="custom-button" />
+        <img src="images/Group 17.svg" class="custom-button" />
+        <div class="custom-rectangle">
+          <textarea
+            id="description"
+            placeholder="개념을 입력해주세요(300글자이내)"></textarea>
+        </div>
+        <input type="submit" value="포스트잇 생성" id="submit-button" />
       </div>
-      <div class="check">확인</div>
-    </div>
+    </form>
     <div class="widget">
       <a class="image-button" href="home.html"
         ><img src="images/home.png" alt="이미지 1"
@@ -36,4 +40,41 @@
       /></a>
     </div>
   </body>
+  <script>
+    document
+      .getElementById("submit-button")
+      .addEventListener("click", function (event) {
+        event.preventDefault(); // 폼 제출 기본 동작 방지
+
+        // 입력 폼에서 사용자가 입력한 데이터 가져오기
+        const token = "ddd";
+        const importance = 1;
+        const description = document.getElementById("description").value;
+
+        // POST 요청 데이터 준비
+        const data = {
+          token: token,
+          importance: importance,
+          description: description,
+        };
+
+        // POST 요청 보내기
+        fetch("http://localhost:3000/concept", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("서버 응답:", data);
+            alert("데이터가 성공적으로 입력되었습니다");
+          })
+          .catch((error) => {
+            console.error("POST 요청 실패:", error);
+            // 오류 처리
+          });
+      });
+  </script>
 </html>

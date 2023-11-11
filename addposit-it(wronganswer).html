@@ -1,139 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포스트잇 추가 오답</title>
-    <style>
-        .rectangle {
-            width: 358px;
-            height: 365px;
-            flex-shrink: 0;
+    <link rel="stylesheet" href="./css/add-post.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+  </head>
 
-            background: #E2D9FC;
-            margin-top: 121px;
-            margin-left: 9px;
-        }
-        .title {
-            
-            color: #2C2C2C;
-            font-family: 'Noto Sans KR';
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            font-family: 'Noto Sans KR';
-            margin-left: 158px;
-            padding-top: 30px;
-        }
-        .subtitle {
-            display: flex;
-            width: 55px;
-            height: 21px;
-            flex-direction: column;
-            justify-content: center;
-            flex-shrink: 0;
-            color: #2C2C2C;
-            text-align: center;
-            font-family: 'Noto Sans KR';
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            padding-left: 20px;
-        }
-        .custom-svg {
-            margin-top: 10px;
-            margin-left: 20px;
-        }
-
-        .custom-button {
-            margin-top: 15px;
-            margin-left: 20px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .custom-rectangle {
-            
-            width: 301px;
-            height: 166px;
-            flex-shrink: 0;
-            border-radius: 8px;
-            background: #FFF;
-            margin-top: 25px;
-            margin-left: 27px;
-            overflow: hidden;
-            /* Hide overflow text */
-        }
-        
-        input[type="text"] {
-            border: none;
-            width: 100%;
-            word-wrap: break-word;
-            /* Wrap text within the rectangle */
-        }
-
-        textarea {
-            width: 100%;
-            height: 100vh;
-        }
-
-        .custom-button-2 {
-            cursor: pointer;
-            text-align: center;
-        }
-        .widget {
-            display: flex;
-            justify-content: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #ffffff;
-        }
-
-        .widget .image-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .widget .image-button img {
-            width: 40px;
-            height: 60px;
-            margin: 20px;
-        }
-        .check {
-            cursor: pointer;
-            text-align: center;
-            font-family: 'Noto Sans KR';
-            font-size: 14px;
-            color: #000;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <div class="rectangle">
-        <div class="title">오답</div>
-        <div class="subtitle">중요도</div>
-        <img src="images/Group 15.svg" class="custom-button">
-        <img src="images/Group 16.svg" class="custom-button">
-        <img src="images/Group 17.svg" class="custom-button">
-        <div class="custom-rectangle">
-            <textarea placeholder="개념을 입력해주세요(300글자이내)  "></textarea>
-        </div>
-        <div class="check">확인</div>
+      <div class="title">오답</div>
+      <div class="subtitle">중요도</div>
+      <img src="images/Group 15.svg" class="custom-button" />
+      <img src="images/Group 16.svg" class="custom-button" />
+      <img src="images/Group 17.svg" class="custom-button" />
+      <div class="custom-rectangle">
+        <textarea placeholder="개념을 입력해주세요(300글자이내)  "></textarea>
+      </div>
+      <div class="check">확인</div>
     </div>
     <div class="widget">
-        <a class="image-button" href="main.html"><img src="images/home.png" alt="이미지 1"></a>
-        <a class="image-button" href="category(concept).html"><img src="images/개념.png" alt="이미지 2"></a>
-        <a class="image-button" href="category(quiz).html"><img src="images/퀴즈.png" alt="이미지 3"></a>
-        <a class="image-button" href="category(wronganswer).html"><img src="images/오답.png" alt="이미지 4"></a>
+      <a class="image-button" href="main.html"
+        ><img src="images/home.png" alt="이미지 1"
+      /></a>
+      <a class="image-button" href="category(concept).html"
+        ><img src="images/개념.png" alt="이미지 2"
+      /></a>
+      <a class="image-button" href="category(quiz).html"
+        ><img src="images/퀴즈.png" alt="이미지 3"
+      /></a>
+      <a class="image-button" href="category(wronganswer).html"
+        ><img src="images/오답.png" alt="이미지 4"
+      /></a>
     </div>
-</body>
-
+  </body>
 </html>

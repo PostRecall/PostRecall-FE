@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아이폰 12 Pro 화면</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <div class="content">
+      <h2 style="font-size: 20px">포스트잇 추가</h2>
+
+      <div class="image-button-container">
+        <button class="image-button">
+          <div class="add-btn" onclick="navigateToPage(1)">
+            <img src="images/+.png" alt="이미지 1" />
+            <p><strong>개념</strong></p>
+          </div>
+        </button>
+        <button class="image-button" onclick="navigateToPage(2)">
+          <div class="add-btn">
+            <img src="images/+.png" alt="이미지 1" />
+            <p><strong>퀴즈</strong></p>
+          </div>
+        </button>
+        <button class="image-button" onclick="navigateToPage(3)">
+          <div class="add-btn">
+            <img src="images/+.png" alt="이미지 1" />
+            <p><strong>오답</strong></p>
+          </div>
+        </button>
+      </div>
+
+      <div class="rounded-rectangle">
+        <button class="button" onclick="navigateToPage(4)">타이핑</button>
+      </div>
+    </div>
+    <div class="static-hamburger-icon" id="hamburger-icon">&#9776;</div>
+    <div class="widget">
+      <button class="image-button" onclick="navigateToPage(5)">
+        <div class="add-btn">
+          <img src="images/home.png" alt="이미지 2" />
+        </div>
+      </button>
+
+      <button class="image-button" onclick="navigateToPage(6)">
+        <div class="add-btn">
+          <img src="images/개념.png" alt="이미지 2" />
+        </div>
+      </button>
+
+      <button class="image-button" onclick="navigateToPage(7)">
+        <div class="add-btn">
+          <img src="images/퀴즈.png" alt="이미지 3" />
+        </div>
+      </button>
+
+      <button class="image-button" onclick="navigateToPage(8)">
+        <div class="add-btn">
+          <img src="images/오답.png" alt="이미지 4" />
+        </div>
+      </button>
+    </div>
+    <div class="menu">
+      <ul>
+        <li style="margin-top: 20px"><a href="#">이용안내</a></li>
+        <li><a href="#">버전정보</a></li>
+        <li><a href="#">문의사항</a></li>
+      </ul>
+    </div>
+    <script>
+      const menu = document.querySelector(".menu");
+      const hamburgerIcon = document.querySelector("#hamburger-icon");
+
+      hamburgerIcon.addEventListener("click", () => {
+        if (menu.style.left === "0px") {
+          menu.style.left = "-250px";
+          hamburgerIcon.classList.remove("menu-open");
+        } else {
+          menu.style.left = "0px";
+          hamburgerIcon.classList.add("menu-open");
+        }
+      });
+
+      function navigateToPage(pageNumber) {
+        let destinationURL = "";
+
+        if (pageNumber === 1) {
+          destinationURL = "addpost-it(concept).html";
+        } else if (pageNumber === 2) {
+          destinationURL = "addpost-it(quiz).html";
+        } else if (pageNumber === 3) {
+          destinationURL = "addposit-it(wronganswer).html";
+        } else if (pageNumber === 4) {
+          destinationURL = "typing.html";
+        } else if (pageNumber === 5) {
+          destinationURL = "main.html";
+        } else if (pageNumber === 6) {
+          destinationURL = "category(concept).html";
+        } else if (pageNumber === 7) {
+          destinationURL = "category(quiz).html";
+        } else if (pageNumber === 8) {
+          destinationURL = "category(wronganswer).html";
+        }
+        // 지정된 URL로 페이지 이동
+        window.location.href = destinationURL;
+      }
+    </script>
+  </body>
+</html>

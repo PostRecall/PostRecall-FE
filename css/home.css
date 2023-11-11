@@ -105,6 +105,26 @@ h2 {
   color: #000;
 }
 
+.menu {
+  width: 200px;
+  color: #121212; /* 텍스트 색상 설정 */
+  padding: 20px;
+  margin-bottom: 2px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 50px; /* 각 메뉴 아이템 간격 설정 */
+}
+a {
+  text-decoration: none;
+  color: #fff; /* 링크 색상 설정 */
+}
+
 .static-hamburger-icon {
   color: #734ceb;
   font-size: 24px;

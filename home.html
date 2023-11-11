@@ -64,11 +64,19 @@
     </div>
     <div class="menu">
       <ul>
+        <li id="kakao-profile">
+          <img id="profile-image" alt="프로필" />
+          <span id="nickname">임지현</span>
+        </li>
         <li style="margin-top: 20px"><a href="#">이용안내</a></li>
         <li><a href="#">버전정보</a></li>
         <li><a href="#">문의사항</a></li>
       </ul>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"></script>
     <script>
       const menu = document.querySelector(".menu");
       const hamburgerIcon = document.querySelector("#hamburger-icon");
@@ -106,6 +114,37 @@
         // 지정된 URL로 페이지 이동
         window.location.href = destinationURL;
       }
+      // 서버에서 사용자 정보 가져오기
+      async function fetchUserInfo() {
+        try {
+          const response = await fetch("/get-user-info");
+
+          // 응답이 성공적인지 확인
+          if (!response.ok) {
+            throw new Error(`HTTP 오류! 상태: ${response.status}`);
+          }
+
+          const userInfo = await response.json();
+
+          // 사용자 정보가 있을 경우 표시
+          if (userInfo) {
+            const profileImage = document.getElementById("profile-image");
+            const nicknameElement = document.getElementById("nickname");
+
+            // 프로필 이미지 및 닉네임 표시
+            profileImage.src = userInfo.profileImage;
+            nicknameElement.textContent = userInfo.nickname;
+          }
+        } catch (error) {
+          console.error(
+            "사용자 정보를 가져오거나 처리하는 중 오류 발생:",
+            error
+          );
+        }
+      }
+
+      // 페이지 로드 시 사용자 정보 가져오기 함수 호출
+      window.onload = fetchUserInfo;
     </script>
   </body>
 </html>

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE- edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>개념 포스트잇 모음집</title>
-    <link rel="stylesheet" href="./css/category.css" />
     <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/category.css" />
   </head>
   <body>
     <div class="title"><strong>개념</strong></div>
@@ -52,6 +52,45 @@
           sortDropdown.value = 1;
         }
       }
+
+      const clientToken = '1234';
+
+      function fetchData(endpoint) {
+        // 'your-server-url'를 실제 서버가 호스팅된 URL로 대체하세요.
+        const serverUrl = 'http://localhost:3000'; // 실제 서버 URL로 변경
+
+        // GET 요청
+        fetch(`${serverUrl}${endpoint}?token=${clientToken}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // 여기서 검색한 데이터를 처리하세요.
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error('데이터를 가져오는 중 오류 발생:', error);
+          });
+      }
+
+      function fetchWrongImportance() {
+        fetchData('/wrong-importance');
+      }
+
+      function fetchWrongSort() {
+        fetchData('/wrong-sort');
+      }
+
+      function fetchWrongSortOrder(order) {
+        fetchData(`/wrong-sort?order=${order}`);
+      }
+
+      // 예시: 클라이언트에서 오답 포스트잇 중요도 태그 별 GET API 호출
+      fetchWrongImportance();
+      // 예시: 클라이언트에서 오답 포스트잇 중요도 태그 별 GET API 호출
+      fetchWrongSort();
+      // 예시: 클라이언트에서 오답 포스트잇 중요도 태그 별 GET API 호출 (오름차순)
+      fetchWrongSortOrder('asc');
+      // 예시: 클라이언트에서 오답 포스트잇 중요도 태그 별 GET API 호출 (내림차순)
+      fetchWrongSortOrder('desc');
     </script>
   </body>
 </html>

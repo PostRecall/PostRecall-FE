@@ -65,45 +65,71 @@ h2 {
 }
 
 .menu {
-  margin-top: 50px;
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -250px; /* 메뉴를 초기에 화면 왼쪽에 숨김 */
   width: 250px;
   height: 100%;
-  background-color: #fff;
-  transition: left 0.3s;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
+  background-color: #eeeafb;
+  padding-top: 60px; /* 상단 여백으로 햄버거 아이콘과 겹치지 않도록 조절 */
+  transition: left 0.3s ease; /* 왼쪽 위치 변경에 애니메이션 효과 추가 */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-left: 17px; /* 조금 왼쪽으로 이동 */
 }
 
 .menu a {
-  padding: 10px;
   text-decoration: none;
-  color: #000;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+#kakao-profile {
+  display: flex;
+  align-items: center;
 }
 
-.menu {
-  width: 200px;
-  color: #121212; /* 텍스트 색상 설정 */
-  padding: 20px;
-  margin-bottom: 2px;
+#profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+#nickname {
+  color: rgb(0, 0, 0);
+  font-weight: bold; /* 닉네임 텍스트를 더 강조하기 위해 굵게 지정 */
+  margin-right: 10px;
 }
 
-li {
-  margin-bottom: 50px; /* 각 메뉴 아이템 간격 설정 */
-}
-a {
-  text-decoration: none;
-  color: #fff; /* 링크 색상 설정 */
+/* 추가된 스타일 */
+#kakao-profile span {
+  display: flex;
+  align-items: center;
 }
 
+/* 햄버거 아이콘 스타일 */
+#hamburger-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 2;
+  color: #734ceb; /* 초기 아이콘 색상 */
+}
+
+.menu-open #hamburger-icon {
+  left: 230px; /* 메뉴 열릴 때 아이콘 위치 조정 */
+  color: #333; /* 아이콘 색상 변경 */
+}
 .static-hamburger-icon {
   color: #734ceb;
   font-size: 24px;
@@ -115,5 +141,6 @@ a {
 }
 
 .menu-open .static-hamburger-icon {
+  color: #734ceb;
   display: none;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="./css/login.css" />
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   </head>
   <body>
@@ -15,13 +15,15 @@
           <img
             src="./images/startkakao.png"
             alt="kakao_logo"
-            class="kakao_icon" />
+            class="kakao_icon" 
+            />
         </button>
         <p class="subText">지금 시작하여 더 스마트한 학습 경험을 만나보세요!</p>
       </div>
     </div>
   </body>
   <script>
+    
     function moveKakaoLogin() {
       location.href = `http://localhost:3000/auth/kakao`;
     }
